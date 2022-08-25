@@ -17,11 +17,6 @@ public class Proyecto {
     private String url_image;
     private String url_sourceCode;
 
-    /*
-      <========================================
-                   CONSTRUCTOR
-      ========================================>
-    */
     // Constructor vacío
     public Proyecto(){}
 

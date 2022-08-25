@@ -17,13 +17,12 @@ public class Estudio {
     public Estudio() {
     }
 
-    public Estudio(int id, String title, String time, String description) {
+    public Estudio(String title, String time, String description) {
         this.id = id;
         this.title = title;
         this.time = time;
         this.description = description;
     }
-
 
     public int getId() {
         return id;
