@@ -9,7 +9,7 @@ public class Estudio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     private String title;
     private String time;
     private String description;
@@ -18,17 +18,16 @@ public class Estudio {
     }
 
     public Estudio(String title, String time, String description) {
-        this.id = id;
         this.title = title;
         this.time = time;
         this.description = description;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

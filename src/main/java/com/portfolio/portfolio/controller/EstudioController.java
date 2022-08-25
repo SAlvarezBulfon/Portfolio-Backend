@@ -42,7 +42,7 @@ public class EstudioController {
     }
 
     @PutMapping("/editEstudio/{id}")
-    public  ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody EstudioDTO estudioDTO){
+    public  ResponseEntity<?> update(@PathVariable("id") long id, @RequestBody EstudioDTO estudioDTO){
         if (StringUtils.isBlank(estudioDTO.getTitle())) {
             return new ResponseEntity(new Mensaje("El título es obligatorio"), HttpStatus.BAD_REQUEST);
         }
@@ -61,7 +61,7 @@ public class EstudioController {
     }
 
     @DeleteMapping("/deleteEstudio/{id}")
-    public ResponseEntity<?>  delete(@PathVariable("id") int id){
+    public ResponseEntity<?>  delete(@PathVariable("id") long id){
         estudioService.delete(id);
         return new ResponseEntity(new Mensaje("Formación académica eliminada con éxito"), HttpStatus.OK);
     }

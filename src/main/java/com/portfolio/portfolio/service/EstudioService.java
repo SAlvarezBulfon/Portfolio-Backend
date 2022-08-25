@@ -22,7 +22,7 @@ public class EstudioService {
     }
 
     //Obtener uno por id
-    public Optional<Estudio> obtenerPorId(int id){
+    public Optional<Estudio> obtenerPorId(long id){
         return estudioRepository.findById(id);
     }
 
@@ -32,7 +32,7 @@ public class EstudioService {
     }
 
     //borrar
-    public void delete(int id){
+    public void delete(long id){
         estudioRepository.deleteById(id);
     }
 }
