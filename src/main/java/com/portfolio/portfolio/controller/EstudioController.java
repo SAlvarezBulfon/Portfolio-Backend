@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/estudio")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 public class EstudioController {
     @Autowired
     EstudioService estudioService;
