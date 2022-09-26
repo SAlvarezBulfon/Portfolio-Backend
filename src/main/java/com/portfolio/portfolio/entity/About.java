@@ -19,7 +19,7 @@ public class About {
     public About() {
     }
 
-    public About(int id, String description1, String description2, String url_CV) {
+    public About(String description1, String description2, String url_CV) {
         this.id = id;
         this.description1 = description1;
         this.description2 = description2;
