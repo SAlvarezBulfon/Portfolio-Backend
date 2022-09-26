@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import com.portfolio.portfolio.dto.AboutDTO;
 import com.portfolio.portfolio.entity.About;
 import com.portfolio.portfolio.service.AboutService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,7 @@ import java.util.List;
 @RequestMapping("/about")
 @CrossOrigin
 public class AboutController {
+    @Autowired
     AboutService aboutService;
 
     @GetMapping("/description")
