@@ -24,7 +24,7 @@ public class AboutController {
         return  new ResponseEntity<List<About>>(List, HttpStatus.OK);
     }
 
-    @PostMapping("/createAbout")
+    @PostMapping("/create")
     public  ResponseEntity<?> createAbout(@RequestBody AboutDTO aboutDTO){
         if(StringUtils.isBlank(aboutDTO.getDescription1())){
             return new ResponseEntity(new Mensaje("La descripción es obligatoria"), HttpStatus.BAD_REQUEST);
@@ -41,7 +41,7 @@ public class AboutController {
     }
 
 
-    @PostMapping("/editAbout/{id}")
+    @PostMapping("/edit/{id}")
     public  ResponseEntity<?> editAbout(@PathVariable("id") int id, @RequestBody AboutDTO aboutDTO){
         if(StringUtils.isBlank(aboutDTO.getDescription1())){
             return new ResponseEntity(new Mensaje("La descripción es obligatoria"), HttpStatus.BAD_REQUEST);
@@ -60,7 +60,7 @@ public class AboutController {
         return new ResponseEntity(new Mensaje("About Editado"), HttpStatus.OK);
     }
 
-    @DeleteMapping("/deleteAbout/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteProject(@PathVariable("id") int id){
         if(!aboutService.existsById(id))
             return new ResponseEntity(new Mensaje("No hay"), HttpStatus.NOT_FOUND);
