@@ -43,7 +43,7 @@ public class AboutController {
     }
 
 
-    @PostMapping("/edit/{id}")
+    @PutMapping("/edit/{id}")
     public  ResponseEntity<?> editAbout(@PathVariable("id") int id, @RequestBody AboutDTO aboutDTO){
         if(StringUtils.isBlank(aboutDTO.getDescription1())){
             return new ResponseEntity(new Mensaje("La descripción es obligatoria"), HttpStatus.BAD_REQUEST);

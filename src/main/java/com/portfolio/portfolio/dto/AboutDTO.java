@@ -2,10 +2,14 @@ package com.portfolio.portfolio.dto;
 
 import com.sun.istack.NotNull;
 
+import javax.validation.constraints.Size;
+
 public class AboutDTO {
     @NotNull
+    @Size(max = 999999)
     private String description1;
     @NotNull
+    @Size(max = 999999)
     private String description2;
     @NotNull
     private String url_CV;
