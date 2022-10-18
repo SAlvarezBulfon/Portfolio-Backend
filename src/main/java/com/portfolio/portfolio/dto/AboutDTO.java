@@ -6,10 +6,10 @@ import javax.validation.constraints.Size;
 
 public class AboutDTO {
     @NotNull
-    @Size(max = 999999)
+    @Size(max = 3000000)
     private String description1;
     @NotNull
-    @Size(max = 999999)
+    @Size(max = 3000000)
     private String description2;
     @NotNull
     private String url_CV;
