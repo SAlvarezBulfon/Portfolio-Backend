@@ -17,8 +17,8 @@ public class Experiencia {
     public Experiencia() {
     }
 
-    public Experiencia(int id, String title, String time, String description) {
-        this.id = id;
+    public Experiencia(String title, String time, String description) {
+
         this.title = title;
         this.time = time;
         this.description = description;
