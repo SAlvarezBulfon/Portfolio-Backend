@@ -15,8 +15,7 @@ public class Softskill {
     public Softskill() {
     }
 
-    public Softskill(int id, String description) {
-        this.id = id;
+    public Softskill(String description) {
         this.description = description;
     }
 
