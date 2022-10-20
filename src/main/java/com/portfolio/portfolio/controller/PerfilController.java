@@ -64,7 +64,7 @@ public class PerfilController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteProject(@PathVariable("id") int id){
+    public ResponseEntity<?> deletePerfil(@PathVariable("id") int id){
         if(!perfilService.existsById(id))
             return new ResponseEntity(new Mensaje("No hay"), HttpStatus.NOT_FOUND);
         perfilService.deletePerfil(id);
