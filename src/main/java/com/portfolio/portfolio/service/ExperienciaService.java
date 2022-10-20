@@ -35,4 +35,7 @@ public class ExperienciaService {
     public void delete(long id){
         experienciaRepository.deleteById(id);
     }
+    public boolean existsById(Long id) {
+        return experienciaRepository.existsById(id);
+    }
 }

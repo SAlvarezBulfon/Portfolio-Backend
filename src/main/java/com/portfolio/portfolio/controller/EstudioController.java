@@ -61,9 +61,11 @@ public class EstudioController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?>  delete(@PathVariable("id") long id){
+    public ResponseEntity<?> deleteEstudio(@PathVariable("id") Long id){
+        if(!estudioService.existsById(id))
+            return new ResponseEntity(new Mensaje("No hay"), HttpStatus.NOT_FOUND);
         estudioService.delete(id);
-        return new ResponseEntity(new Mensaje("Formación académica eliminada con éxito"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Eliminado"), HttpStatus.OK);
     }
 
 }

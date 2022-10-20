@@ -35,4 +35,8 @@ public class EstudioService {
     public void delete(long id){
         estudioRepository.deleteById(id);
     }
+
+    public boolean existsById(Long id) {
+        return estudioRepository.existsById(id);
+    }
 }

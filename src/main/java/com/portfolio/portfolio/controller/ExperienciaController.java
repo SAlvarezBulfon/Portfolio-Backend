@@ -64,8 +64,10 @@ public class ExperienciaController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?>  delete(@PathVariable("id") long id){
+    public ResponseEntity<?> deleteExp(@PathVariable("id") Long id){
+        if(!experienciaService.existsById(id))
+            return new ResponseEntity(new Mensaje("No hay"), HttpStatus.NOT_FOUND);
         experienciaService.delete(id);
-        return new ResponseEntity(new Mensaje("Experiencia laboral eliminada con éxito"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Eliminado"), HttpStatus.OK);
     }
 }

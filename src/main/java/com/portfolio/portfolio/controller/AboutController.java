@@ -63,7 +63,7 @@ public class AboutController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteProject(@PathVariable("id") int id){
+    public ResponseEntity<?> deleteAbout(@PathVariable("id") int id){
         if(!aboutService.existsById(id))
             return new ResponseEntity(new Mensaje("No hay"), HttpStatus.NOT_FOUND);
         aboutService.deleteAbout(id);
