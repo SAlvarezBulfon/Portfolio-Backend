@@ -32,10 +32,10 @@ public class ExperienciaService {
     }
 
     //borrar
-    public void delete(long id){
+    public void deleteExperiencia(long id){
         experienciaRepository.deleteById(id);
     }
-    public boolean existsById(Long id) {
+    public boolean existsById(long id) {
         return experienciaRepository.existsById(id);
     }
 }

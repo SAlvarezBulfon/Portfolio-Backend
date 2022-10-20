@@ -67,7 +67,7 @@ public class ExperienciaController {
     public ResponseEntity<?> deleteExp(@PathVariable("id") Long id){
         if(!experienciaService.existsById(id))
             return new ResponseEntity(new Mensaje("No hay"), HttpStatus.NOT_FOUND);
-        experienciaService.delete(id);
+        experienciaService.deleteExperiencia(id);
         return new ResponseEntity(new Mensaje("Eliminado"), HttpStatus.OK);
     }
 }

@@ -36,7 +36,7 @@ public class EstudioService {
         estudioRepository.deleteById(id);
     }
 
-    public boolean existsById(Long id) {
+    public boolean existsById(long id) {
         return estudioRepository.existsById(id);
     }
 }
