@@ -47,10 +47,10 @@ public class EstudioController {
             return new ResponseEntity(new Mensaje("El título es obligatorio"), HttpStatus.BAD_REQUEST);
         }
         if(StringUtils.isBlank(estudioDTO.getDescription())) {
-            return  new ResponseEntity(new Mensaje("La descripción es obligaroria"), HttpStatus.BAD_REQUEST);
+            return  new ResponseEntity(new Mensaje("La descripción es obligatoria"), HttpStatus.BAD_REQUEST);
         }
         if(StringUtils.isBlank(estudioDTO.getTime())) {
-            return  new ResponseEntity(new Mensaje("la duración es obligaroria"), HttpStatus.BAD_REQUEST);
+            return  new ResponseEntity(new Mensaje("la duración es obligatoria"), HttpStatus.BAD_REQUEST);
         }
         Estudio estudio = estudioService.obtenerPorId(id).get();
         estudio.setTitle(estudioDTO.getTitle());
