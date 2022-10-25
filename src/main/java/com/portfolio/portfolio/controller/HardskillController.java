@@ -22,7 +22,7 @@ public class HardskillController {
     @Autowired
     HardskillService hardskillService;
 
-    @GetMapping("/hardskill")
+    @GetMapping("/lista")
     public ResponseEntity<List<HardSkill>> Hardskill(){
         List<HardSkill> hardSkills =hardskillService.getHS();
         return new ResponseEntity(hardSkills, HttpStatus.OK);
