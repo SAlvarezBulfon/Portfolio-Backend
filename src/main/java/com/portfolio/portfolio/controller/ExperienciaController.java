@@ -1,11 +1,8 @@
 package com.portfolio.portfolio.controller;
 
-import com.portfolio.portfolio.dto.EstudioDTO;
 import com.portfolio.portfolio.dto.ExperienciaDTO;
 import com.portfolio.portfolio.dto.Mensaje;
-import com.portfolio.portfolio.entity.Estudio;
 import com.portfolio.portfolio.entity.Experiencia;
-import com.portfolio.portfolio.service.EstudioService;
 import com.portfolio.portfolio.service.ExperienciaService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +42,7 @@ public class ExperienciaController {
     }
 
     @PutMapping("/edit/{id}")
-    public  ResponseEntity<?> update(@PathVariable("id") long id, @RequestBody ExperienciaDTO exDTO){
+    public  ResponseEntity<?> update(@PathVariable("id") Long id, @RequestBody ExperienciaDTO exDTO){
         if (StringUtils.isBlank(exDTO.getTitle())) {
             return new ResponseEntity(new Mensaje("El título es obligatorio"), HttpStatus.BAD_REQUEST);
         }
