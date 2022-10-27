@@ -11,7 +11,6 @@ public class Perfil {
     // Lo hace autoincremental
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String photo_url;
     private String nombre;
     private String puesto;
 
@@ -20,9 +19,8 @@ public class Perfil {
     public Perfil() {
     }
 
-    public Perfil(String photo_url, String nombre, String puesto) {
+    public Perfil(String nombre, String puesto) {
         this.id = id;
-        this.photo_url = photo_url;
         this.nombre = nombre;
         this.puesto = puesto;
     }
@@ -34,14 +32,6 @@ public class Perfil {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getPhoto_url() {
-        return photo_url;
-    }
-
-    public void setPhoto_url(String photo_url) {
-        this.photo_url = photo_url;
     }
 
     public String getNombre() {

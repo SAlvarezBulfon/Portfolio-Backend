@@ -29,16 +29,13 @@ public class PerfilController {
 
     @PostMapping("/create")
     public  ResponseEntity<?> createPerfil(@RequestBody PerfilDTO perfilDTO){
-        if(StringUtils.isBlank(perfilDTO.getPhoto_url())){
-            return new ResponseEntity(new Mensaje("Su foto es obligatoria"), HttpStatus.BAD_REQUEST);
-        }
         if(StringUtils.isBlank(perfilDTO.getNombre())){
             return new ResponseEntity(new Mensaje("Su nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
         if(StringUtils.isBlank(perfilDTO.getPuesto())){
             return new ResponseEntity(new Mensaje("El puesto al que postula o ejerce es obligatorio"), HttpStatus.BAD_REQUEST);
         }
-        Perfil perfil = new Perfil( perfilDTO.getPhoto_url(), perfilDTO.getNombre(), perfilDTO.getPuesto());
+        Perfil perfil = new Perfil(perfilDTO.getNombre(), perfilDTO.getPuesto());
         perfilService.createPerfil(perfil);
         return new ResponseEntity(new Mensaje("Perfil creado correctamente"), HttpStatus.OK);
     }
@@ -46,9 +43,6 @@ public class PerfilController {
 
     @PutMapping("/edit/{id}")
     public  ResponseEntity<?> editPerfil(@PathVariable("id") int id, @RequestBody PerfilDTO perfilDTO){
-        if(StringUtils.isBlank(perfilDTO.getPhoto_url())){
-            return new ResponseEntity(new Mensaje("Su foto es obligatoria"), HttpStatus.BAD_REQUEST);
-        }
         if(StringUtils.isBlank(perfilDTO.getNombre())){
             return new ResponseEntity(new Mensaje("Su nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
@@ -56,7 +50,6 @@ public class PerfilController {
             return new ResponseEntity(new Mensaje("El puesto que tiene o desea ejercer obligatorio"), HttpStatus.BAD_REQUEST);
         }
         Perfil perfil = perfilService.getOne(id).get();
-        perfil.setPhoto_url(perfilDTO.getPhoto_url());
         perfil.setNombre(perfilDTO.getNombre());
         perfil.setPuesto(perfilDTO.getPuesto());
         perfilService.createPerfil(perfil);
